@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_margin="15dp">
+
+        <EditText
+            android:id="@+id/et_complain"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@drawable/shape_edittext_bg"
+            android:gravity="left"
+            android:hint="请输入反馈内容，我们会为您更好的服务"
+            android:maxLength="200"
+            android:padding="10dp"
+            android:textColor="@color/tv333"
+            android:textColorHint="#999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_edit_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:text="0/200"
+            android:textColor="#4c4c4c"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_commit"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/bot_text"
+        android:gravity="center"
+        android:text="提交反馈"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>
