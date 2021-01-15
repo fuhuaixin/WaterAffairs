@@ -20,6 +20,7 @@ import com.fhx.wateraffairs.R;
 import com.fhx.wateraffairs.adapter.ImageChooseAdapter;
 import com.fhx.wateraffairs.base.BaseActivity;
 import com.fhx.wateraffairs.dialog.ListDialog;
+import com.fhx.wateraffairs.utils.CutToUtils;
 import com.scrat.app.selectorlibrary.ImageSelector;
 
 import java.io.File;
@@ -133,7 +134,7 @@ public class ReportedInformationActivity extends BaseActivity {
                 FinishActivity();
                 break;
             case R.id.image_right:
-
+                CutToUtils.getInstance().JumpTo(ReportedInformationActivity.this,ReportedHistoryActivity.class);
                 break;
         }
     }

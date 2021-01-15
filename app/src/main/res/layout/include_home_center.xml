@@ -107,6 +107,7 @@
             android:layout_height="match_parent"
             android:background="@color/all_line"/>
         <LinearLayout
+            android:id="@+id/ll_project"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="0dp"
@@ -129,6 +130,7 @@
             android:layout_height="match_parent"
             android:background="@color/all_line"/>
         <LinearLayout
+            android:id="@+id/ll_contact"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="0dp"

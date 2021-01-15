@@ -14,12 +14,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fhx.wateraffairs.R;
+import com.fhx.wateraffairs.activity.home.ContactsActivity;
 import com.fhx.wateraffairs.activity.home.MessageActivity;
 import com.fhx.wateraffairs.activity.home.MonitoringActivity;
 import com.fhx.wateraffairs.activity.home.NewsNotifyActivity;
+import com.fhx.wateraffairs.activity.home.ProjectInformationActivity;
 import com.fhx.wateraffairs.activity.home.ReportedInformationActivity;
 import com.fhx.wateraffairs.activity.home.WaterCollectActivity;
+import com.fhx.wateraffairs.activity.patrol.AnomalyRecordActivity;
+import com.fhx.wateraffairs.activity.patrol.AnomalyRecordMsgActivity;
 import com.fhx.wateraffairs.adapter.AnomalyRecordAdapter;
 import com.fhx.wateraffairs.base.BaseFragment;
 import com.fhx.wateraffairs.bean.AnomalyRecordBean;
@@ -57,9 +62,9 @@ public class HomeFragment extends BaseFragment {
         super.setViewData(view);
         cutTo = CutToUtils.getInstance();
         imageList.clear();
+        imageList.add("http://pic.netbian.com/uploads/allimg/201229/220230-1609250550f18c.jpg");
         imageList.add("http://pic.netbian.com/uploads/allimg/201221/233225-1608564745f480.jpg");
-        imageList.add("http://pic.netbian.com/uploads/allimg/201222/001824-160856750454cc.jpg");
-        imageList.add("http://pic.netbian.com/uploads/allimg/201228/210128-1609160488f8b7.jpg");
+        imageList.add("http://pic.netbian.com/uploads/allimg/201231/180633-160940919351b9.jpg");
         setBanner();
         setAdapter();
 
@@ -73,6 +78,12 @@ public class HomeFragment extends BaseFragment {
         anomalyRecordAdapter = new AnomalyRecordAdapter(adapterList);
         recycleRecode.setLayoutManager(new LinearLayoutManager(getContext()));
         recycleRecode.setAdapter(anomalyRecordAdapter);
+        anomalyRecordAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                CutToUtils.getInstance().JumpTo(getActivity(), AnomalyRecordMsgActivity.class);
+            }
+        });
     }
 
     private void setBanner() {
@@ -100,7 +111,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     @OnClick({R.id.ll_message, R.id.ll_notify, R.id.ll_monitor, R.id.ll_water_collect,
-            R.id.ll_reported})
+            R.id.ll_reported, R.id.ll_project, R.id.ll_contact,R.id.image_anomalyRecord})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_message:
@@ -117,6 +128,15 @@ public class HomeFragment extends BaseFragment {
                 break;
             case R.id.ll_reported:
                 cutTo.JumpTo(getActivity(), ReportedInformationActivity.class);
+                break;
+            case R.id.ll_project:
+                cutTo.JumpTo(getActivity(), ProjectInformationActivity.class);
+                break;
+            case R.id.ll_contact:
+                cutTo.JumpTo(getActivity(), ContactsActivity.class);
+                break;
+            case R.id.image_anomalyRecord:
+                cutTo.JumpTo(getActivity(), AnomalyRecordActivity.class);
                 break;
         }
     }

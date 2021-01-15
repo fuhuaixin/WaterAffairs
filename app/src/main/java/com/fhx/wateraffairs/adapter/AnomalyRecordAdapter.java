@@ -42,5 +42,6 @@ public class AnomalyRecordAdapter extends BaseQuickAdapter<AnomalyRecordBean, Ba
         helper.setText(R.id.tv_title,item.getTitle())
                 .setText(R.id.tv_time,item.getTime())
                 .setText(R.id.tv_msg,item.getMsg());
+        helper.addOnClickListener(R.id.ll_item);
     }
 }

@@ -19,6 +19,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 这个权限用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 拨打电话的权限，这里必须要添加权限，否则当点击电话号码的时候程序会崩溃 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".base.BaseApplication"
@@ -109,7 +111,30 @@
         <activity
             android:name=".activity.home.ReportedInformationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
+        <!--        信息上报历史-->
+        <activity
+            android:name=".activity.home.ReportedHistoryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--        信息上报历史详情-->
+        <activity
+            android:name=".activity.home.ReportedHistoryMsgActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--        工程信息-->
+        <activity
+            android:name=".activity.home.ProjectInformationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--        通讯录-->
+        <activity android:name=".activity.home.ContactsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--        通讯录详情-->
+        <activity android:name=".activity.home.ContactsMsgActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--        异常记录-->
+        <activity android:name=".activity.patrol.AnomalyRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--        异常记录详情-->
+        <activity android:name=".activity.patrol.AnomalyRecordMsgActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <!--        投诉反馈-->
         <activity

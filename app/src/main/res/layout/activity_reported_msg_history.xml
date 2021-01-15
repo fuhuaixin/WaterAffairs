@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <include layout="@layout/include_title" />
@@ -14,6 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <com.to.aboomy.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_margin="15dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,31 +62,25 @@
                     android:layout_marginRight="27dp"
                     android:gravity="center_vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#FF0000"
-                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
                         android:text="河流位置："
                         android:textColor="@color/tv999"
                         android:textSize="14sp" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="@null"
-                        android:hint="请输入"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
+                        android:text="获取的"
                         android:textColor="@color/tv666"
-                        android:textColorHint="@color/tv999"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -94,13 +95,6 @@
                     android:layout_marginLeft="27dp"
                     android:layout_marginRight="27dp"
                     android:gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#FF0000"
-                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -110,16 +104,14 @@
                         android:textColor="@color/tv999"
                         android:textSize="14sp" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="@null"
-                        android:hint="请输入"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
+                        android:text="获取的"
                         android:textColor="@color/tv666"
-                        android:textColorHint="@color/tv999"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -135,13 +127,6 @@
                     android:layout_marginRight="27dp"
                     android:gravity="center_vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#FF0000"
-                        android:textSize="14sp"
-                        android:visibility="invisible" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -151,16 +136,14 @@
                         android:textColor="@color/tv999"
                         android:textSize="14sp" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="@null"
-                        android:hint="请输入"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
+                        android:text="获取的"
                         android:textColor="@color/tv666"
-                        android:textColorHint="@color/tv999"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -203,12 +186,6 @@
                     android:layout_marginRight="27dp"
                     android:gravity="center_vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#FF0000"
-                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -218,16 +195,14 @@
                         android:textColor="@color/tv999"
                         android:textSize="14sp" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="@null"
-                        android:hint="请输入"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
+                        android:text="获取的"
                         android:textColor="@color/tv666"
-                        android:textColorHint="@color/tv999"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -243,12 +218,6 @@
                     android:layout_marginRight="27dp"
                     android:gravity="center_vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#FF0000"
-                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -258,16 +227,14 @@
                         android:textColor="@color/tv999"
                         android:textSize="14sp" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:background="@null"
-                        android:hint="请输入"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
+                        android:text="获取的"
                         android:textColor="@color/tv666"
-                        android:textColorHint="@color/tv999"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -283,13 +250,6 @@
                     android:layout_marginRight="27dp"
                     android:gravity="center_vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#FF0000"
-                        android:textSize="14sp"
-                        android:visibility="invisible" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -300,13 +260,12 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/tv_get_water_mode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
-                        android:text="请选择"
+                        android:text="获取的"
                         android:textColor="@color/tv666"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -337,64 +296,27 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <EditText
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginRight="27dp"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="27dp"
                     android:background="@drawable/shape_edittext_single_bg"
                     android:gravity="left"
-                    android:hint="若有其他反馈信息，请详细描述..."
-                    android:inputType="text"
                     android:minHeight="90dp"
                     android:padding="15dp"
+                    android:text="获取到的数据"
                     android:textColor="@color/tv666"
                     android:textColorHint="@color/tv999"
                     android:textSize="14sp" />
-                <!--分割线-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:padding="15dp">
 
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:src="@mipmap/icon_item_right" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="图片上传"
-                        android:textColor="@color/tv333"
-                        android:textSize="14sp" />
-                </LinearLayout>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:id="@+id/recycle_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="30dp"/>
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_commit"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#2C6DFF"
-                android:gravity="center"
-                android:text="提交"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
 
 </LinearLayout>
