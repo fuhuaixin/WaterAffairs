@@ -129,11 +129,15 @@
         <!--        通讯录详情-->
         <activity android:name=".activity.home.ContactsMsgActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
         <!--        异常记录-->
         <activity android:name=".activity.patrol.AnomalyRecordActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <!--        异常记录详情-->
         <activity android:name=".activity.patrol.AnomalyRecordMsgActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--        异常记录表单提交-->
+        <activity android:name=".activity.patrol.AnomalyCommitActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <!--        投诉反馈-->

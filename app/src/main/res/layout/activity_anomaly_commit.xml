@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="160dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_anomaly_loaction" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="所处位置："
+                    android:textColor="@color/tv333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="张庄桥某某点"
+                    android:textColor="@color/tv999"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_monitor_map" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_anomaly_equ" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="设备名称："
+                    android:textColor="@color/tv333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="请选择"
+                    android:textColor="@color/tv999"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_monitor_more" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_anomaly_no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="设备编号："
+                    android:textColor="@color/tv333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="请选择"
+                    android:textColor="@color/tv999"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_monitor_more" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="问题描述："
+                android:textColor="@color/tv333"
+                android:textSize="15sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_edittext_single_bg"
+                android:gravity="left"
+                android:hint="若有其他反馈信息，请详细描述..."
+                android:minHeight="90dp"
+                android:padding="10dp"
+                android:textColor="@color/tv333"
+                android:textColorHint="@color/tv999"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="图片上传："
+                android:textColor="@color/tv333"
+                android:textSize="15sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/recycle_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="30dp"/>
+            <TextView
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:background="#2C6DFF"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="提交"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

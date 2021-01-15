@@ -22,6 +22,7 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.fhx.wateraffairs.R;
 import com.fhx.wateraffairs.base.BaseActivity;
+import com.fhx.wateraffairs.utils.CutToUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -75,7 +76,7 @@ public class PatrolActivity extends BaseActivity {
     @Override
     protected void initView() {
         setAnimation();
-
+        imageRight.setImageResource(R.mipmap.icon_anomaly_right);
     }
 
     @Override
@@ -122,7 +123,7 @@ public class PatrolActivity extends BaseActivity {
                 , -1.0f, Animation.RELATIVE_TO_SELF, 0.0f);
         mShowAnim.setDuration(500);
 
-//控件隐藏的动画
+        //控件隐藏的动画
         HiddenAmin = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
                 Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF
                 , 0.0f, Animation.RELATIVE_TO_SELF, -1.0f);
@@ -130,7 +131,7 @@ public class PatrolActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.image_back, R.id.image_right})
+    @OnClick({R.id.image_back, R.id.image_right,R.id.rl_anomaly})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.image_back:
@@ -138,6 +139,9 @@ public class PatrolActivity extends BaseActivity {
                 break;
             case R.id.image_right:
 
+                break;
+            case R.id.rl_anomaly:
+                CutToUtils.getInstance().JumpTo(PatrolActivity.this,AnomalyCommitActivity.class);
                 break;
         }
     }
