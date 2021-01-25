@@ -79,20 +79,17 @@ public class ReportedInformationActivity extends BaseActivity {
 
     @Override
     protected void initListen() {
-        chooseImageDialog.setListener(new ListDialog.LeaveMyDialogListener() {
-            @Override
-            public void onClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (position) {
-                    case 0:
-                        useCamera();
-                        break;
-                    case 1:
-                        ImageSelector.show(ReportedInformationActivity.this, REQUEST_CODE_SELECT_IMG, MAX_SELECT_COUNT - mImageList.size());
+        chooseImageDialog.setListener((adapter, view, position) -> {
+            switch (position) {
+                case 0:
+                    useCamera();
+                    break;
+                case 1:
+                    ImageSelector.show(ReportedInformationActivity.this, REQUEST_CODE_SELECT_IMG, MAX_SELECT_COUNT - mImageList.size());
 
-                        break;
-                }
-                chooseImageDialog.dismiss();
+                    break;
             }
+            chooseImageDialog.dismiss();
         });
         chooseAdapter.setClickListener(new ImageChooseAdapter.OnItemClickListener() {
             @Override
@@ -114,7 +111,7 @@ public class ReportedInformationActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK) {
-            Log.e("TAG", "拍照---------" + FileProvider.getUriForFile(this, "com.fhx.propertyuser.provider", file));
+            Log.e("TAG", "拍照---------" + FileProvider.getUriForFile(this, "com.fhx.wateraffairs.provider", file));
             Log.e("TAG", "拍照---------" + file);
 //            imageView.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
             Luban(file);

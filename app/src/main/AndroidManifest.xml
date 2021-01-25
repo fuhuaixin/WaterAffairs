@@ -158,6 +158,14 @@
         <activity
             android:name=".activity.patrol.PatrolActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--巡检记录-->
+        <activity
+            android:name=".activity.patrol.PatrolRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--巡检定位-->
+        <activity
+            android:name=".activity.patrol.PatrolLocationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

@@ -1,20 +1,24 @@
 package com.fhx.wateraffairs.activity.home;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ZoomControls;
 
-import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.TextureMapView;
 import com.fhx.wateraffairs.R;
 import com.fhx.wateraffairs.base.BaseActivity;
 import com.fhx.wateraffairs.dialog.ListDialog;
+import com.fhx.wateraffairs.utils.BaiduMapContainer;
 import com.fhx.wateraffairs.utils.CutToUtils;
+import com.fhx.wateraffairs.utils.MyScrollview;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -28,11 +32,16 @@ public class WaterCollectActivity extends BaseActivity {
     @BindView(R.id.image_right)
     ImageView imageRight;
     @BindView(R.id.mapView)
-    MapView mapView;
+    TextureMapView mapView;
     @BindView(R.id.tv_water_type)
     TextView tvWaterType;
     @BindView(R.id.tv_get_water_mode)
     TextView tvGetWaterMode;
+    @BindView(R.id.map_container)
+    BaiduMapContainer mapContainer;
+    @BindView(R.id.my_scrollView)
+    MyScrollview myScrollView;
+
     private ListDialog listDialog;
     private List<String> titleList = new ArrayList<>();
     String title;
@@ -46,7 +55,7 @@ public class WaterCollectActivity extends BaseActivity {
     protected void initView() {
         tvTitle.setText("水量采集");
         imageRight.setImageResource(R.mipmap.icon_monitor_history);
-
+        mapContainer.setScrollView(myScrollView);
 
         // 隐藏logo
         View child = mapView.getChildAt(1);
@@ -82,7 +91,7 @@ public class WaterCollectActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.image_back, R.id.image_right, R.id.tv_water_type, R.id.tv_get_water_mode,R.id.tv_commit})
+    @OnClick({R.id.image_back, R.id.image_right, R.id.tv_water_type, R.id.tv_get_water_mode, R.id.tv_commit})
     public void onViewClicked(View view) {
         titleList.clear();
         switch (view.getId()) {
@@ -90,7 +99,7 @@ public class WaterCollectActivity extends BaseActivity {
                 FinishActivity();
                 break;
             case R.id.image_right:
-                CutToUtils.getInstance().JumpTo(this,WaterCollectRecordActivity.class);
+                CutToUtils.getInstance().JumpTo(this, WaterCollectRecordActivity.class);
                 break;
             case R.id.tv_water_type:
                 title = "水源类型";
@@ -118,4 +127,5 @@ public class WaterCollectActivity extends BaseActivity {
                 break;
         }
     }
+
 }

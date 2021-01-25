@@ -25,6 +25,7 @@ import com.fhx.wateraffairs.activity.home.ReportedInformationActivity;
 import com.fhx.wateraffairs.activity.home.WaterCollectActivity;
 import com.fhx.wateraffairs.activity.patrol.AnomalyRecordActivity;
 import com.fhx.wateraffairs.activity.patrol.AnomalyRecordMsgActivity;
+import com.fhx.wateraffairs.activity.patrol.PatrolRecordActivity;
 import com.fhx.wateraffairs.adapter.AnomalyRecordAdapter;
 import com.fhx.wateraffairs.base.BaseFragment;
 import com.fhx.wateraffairs.bean.AnomalyRecordBean;
@@ -111,7 +112,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     @OnClick({R.id.ll_message, R.id.ll_notify, R.id.ll_monitor, R.id.ll_water_collect,
-            R.id.ll_reported, R.id.ll_project, R.id.ll_contact,R.id.image_anomalyRecord})
+            R.id.ll_reported, R.id.ll_project, R.id.ll_contact,R.id.image_anomalyRecord,R.id.ll_patrol_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_message:
@@ -137,6 +138,9 @@ public class HomeFragment extends BaseFragment {
                 break;
             case R.id.image_anomalyRecord:
                 cutTo.JumpTo(getActivity(), AnomalyRecordActivity.class);
+                break;
+            case R.id.ll_patrol_record:
+                cutTo.JumpTo(getActivity(), PatrolRecordActivity.class);
                 break;
         }
     }

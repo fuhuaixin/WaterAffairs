@@ -7,7 +7,8 @@
 
     <include layout="@layout/include_title" />
 
-    <androidx.core.widget.NestedScrollView
+    <com.fhx.wateraffairs.utils.MyScrollview
+        android:id="@+id/my_scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,11 +17,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-            <com.baidu.mapapi.map.MapView
-                android:id="@+id/mapView"
+            <com.fhx.wateraffairs.utils.BaiduMapContainer
+                android:id="@+id/map_container"
                 android:layout_width="match_parent"
-                android:layout_height="210dp" />
+                android:layout_height="wrap_content">
+                <com.baidu.mapapi.map.TextureMapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp" />
+
+            </com.fhx.wateraffairs.utils.BaiduMapContainer>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -537,6 +543,6 @@
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </com.fhx.wateraffairs.utils.MyScrollview>
 
 </LinearLayout>

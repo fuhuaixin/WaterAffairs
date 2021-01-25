@@ -7,19 +7,28 @@
 
     <include layout="@layout/include_title" />
 
-    <androidx.core.widget.NestedScrollView
+    <com.fhx.wateraffairs.utils.MyScrollview
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.baidu.mapapi.map.MapView
-                android:id="@+id/mapView"
+            <com.fhx.wateraffairs.utils.BaiduMapContainer
+                android:id="@+id/baidu_Container"
                 android:layout_width="match_parent"
-                android:layout_height="160dp" />
+                android:layout_height="wrap_content">
+
+                <com.baidu.mapapi.map.TextureMapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp" />
+            </com.fhx.wateraffairs.utils.BaiduMapContainer>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,10 +38,7 @@
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:paddingTop="20dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="20dp">
+                android:paddingLeft="15dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -40,6 +46,9 @@
                     android:src="@mipmap/icon_anomaly_loaction" />
 
                 <TextView
+                    android:paddingTop="20dp"
+
+                    android:paddingBottom="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -48,21 +57,21 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_commit_address"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="张庄桥某某点"
                     android:textColor="@color/tv999"
                     android:textSize="15sp" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
                 <ImageView
+                    android:id="@+id/image_location"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:src="@mipmap/icon_monitor_map" />
             </LinearLayout>
 
@@ -177,6 +186,7 @@
                 android:textColor="@color/tv333"
                 android:textColorHint="@color/tv999"
                 android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -184,24 +194,26 @@
                 android:text="图片上传："
                 android:textColor="@color/tv333"
                 android:textSize="15sp" />
+
             <androidx.recyclerview.widget.RecyclerView
-                android:background="@color/white"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:id="@+id/recycle_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+
             <View
                 android:layout_width="0dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp" />
+
             <TextView
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:background="#2C6DFF"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="提交"/>
+                android:background="#2C6DFF"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.fhx.wateraffairs.utils.MyScrollview>
 </LinearLayout>
