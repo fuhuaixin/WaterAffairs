@@ -58,6 +58,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
+
         <!--        启动页-->
         <activity
             android:name=".activity.login.SplashActivity"
