@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fhx.wateraffairs.R;
+import com.fhx.wateraffairs.activity.home.ContactsActivity;
 import com.fhx.wateraffairs.activity.mine.ChangePassWordActivity;
 import com.fhx.wateraffairs.activity.mine.MineComplainActivity;
 import com.fhx.wateraffairs.activity.mine.PersonMesActivity;
@@ -47,6 +48,7 @@ public class MineFragment extends BaseFragment {
     public void setViewData(View view) {
         super.setViewData(view);
         mineListBeanList.clear();
+        mineListBeanList.add(new MineListBean("通讯录", R.mipmap.icon_mine_contacts, false));
         mineListBeanList.add(new MineListBean("修改密码", R.mipmap.icon_mine_chager, false));
         mineListBeanList.add(new MineListBean("检查更新", R.mipmap.icon_mine_check, true));
         mineListBeanList.add(new MineListBean("投诉反馈", R.mipmap.icon_mine_complain, false));
@@ -75,6 +77,9 @@ public class MineFragment extends BaseFragment {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 switch (mineListBeanList.get(position).getName()) {
+                    case "通讯录":
+                        CutToUtils.getInstance().JumpTo(getActivity(), ContactsActivity.class);
+                        break;
                     case "修改密码":
                         CutToUtils.getInstance().JumpTo(getActivity(), ChangePassWordActivity.class);
                         break;

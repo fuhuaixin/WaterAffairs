@@ -4,9 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -18,6 +16,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fhx.wateraffairs.R;
 import com.fhx.wateraffairs.activity.home.ContactsActivity;
 import com.fhx.wateraffairs.activity.home.MessageActivity;
+import com.fhx.wateraffairs.activity.home.RecordWriteActivity;
+import com.fhx.wateraffairs.activity.video.MonitorVideoListActivity;
 import com.fhx.wateraffairs.activity.home.MonitoringActivity;
 import com.fhx.wateraffairs.activity.home.NewsNotifyActivity;
 import com.fhx.wateraffairs.activity.home.ProjectInformationActivity;
@@ -29,7 +29,6 @@ import com.fhx.wateraffairs.activity.patrol.PatrolRecordActivity;
 import com.fhx.wateraffairs.adapter.AnomalyRecordAdapter;
 import com.fhx.wateraffairs.base.BaseFragment;
 import com.fhx.wateraffairs.bean.AnomalyRecordBean;
-import com.fhx.wateraffairs.dialog.TipDialog;
 import com.fhx.wateraffairs.utils.CutToUtils;
 import com.to.aboomy.banner.Banner;
 import com.to.aboomy.banner.HolderCreator;
@@ -111,15 +110,18 @@ public class HomeFragment extends BaseFragment {
         return (int) (dp * getContext().getResources().getDisplayMetrics().density);
     }
 
-    @OnClick({R.id.ll_message, R.id.ll_notify, R.id.ll_monitor, R.id.ll_water_collect,
-            R.id.ll_reported, R.id.ll_project, R.id.ll_contact,R.id.image_anomalyRecord,R.id.ll_patrol_record})
+    @OnClick({R.id.ll_message, R.id.ll_location, R.id.rl_notify, R.id.ll_monitor, R.id.ll_water_collect,
+            R.id.ll_reported, R.id.ll_project, R.id.ll_contact, R.id.image_anomalyRecord, R.id.ll_patrol_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_message:
                 cutTo.JumpTo(getActivity(), MessageActivity.class);
                 break;
-            case R.id.ll_notify:
+            case R.id.rl_notify:
                 cutTo.JumpTo(getActivity(), NewsNotifyActivity.class);
+                break;
+            case R.id.ll_location:
+
                 break;
             case R.id.ll_monitor:
                 cutTo.JumpTo(getActivity(), MonitoringActivity.class);
@@ -134,13 +136,14 @@ public class HomeFragment extends BaseFragment {
                 cutTo.JumpTo(getActivity(), ProjectInformationActivity.class);
                 break;
             case R.id.ll_contact:
-                cutTo.JumpTo(getActivity(), ContactsActivity.class);
+                cutTo.JumpTo(getActivity(), MonitorVideoListActivity.class);
                 break;
             case R.id.image_anomalyRecord:
                 cutTo.JumpTo(getActivity(), AnomalyRecordActivity.class);
                 break;
             case R.id.ll_patrol_record:
-                cutTo.JumpTo(getActivity(), PatrolRecordActivity.class);
+//                cutTo.JumpTo(getActivity(), PatrolRecordActivity.class);
+                cutTo.JumpTo(getActivity(), RecordWriteActivity.class);
                 break;
         }
     }

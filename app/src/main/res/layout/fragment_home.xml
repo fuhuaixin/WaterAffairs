@@ -13,7 +13,6 @@
         android:paddingBottom="20dp">
 
         <LinearLayout
-            android:id="@+id/ll_notify"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/white"
@@ -21,18 +20,20 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:gravity="center"
-                android:background="@drawable/shape_home_top_bg"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:id="@+id/ll_location"
                 android:layout_width="0dp"
                 android:layout_height="25dp"
-                android:layout_weight="1">
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_home_top_bg"
+                android:gravity="center">
+
                 <TextView
-                    android:drawablePadding="10dp"
-                    android:drawableLeft="@mipmap/icon_home_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/icon_home_location"
+                    android:drawablePadding="10dp"
                     android:text="张庄桥段"
                     android:textColor="@color/tv666"
                     android:textSize="13sp" />
@@ -40,6 +41,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/rl_notify"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="15dp">
@@ -143,35 +145,37 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_marginLeft="15dp"
                     android:layout_width="12dp"
                     android:layout_height="13dp"
+                    android:layout_marginLeft="15dp"
                     android:src="@mipmap/icon_home_recode" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="异常记录"
                     android:textColor="@color/tv666"
                     android:textSize="14sp" />
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
+
                 <ImageView
                     android:id="@+id/image_anomalyRecord"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
                     android:src="@mipmap/icon_home_more" />
             </LinearLayout>
 

@@ -23,7 +23,7 @@ public abstract class BaseActivity extends SwipeBackActivity {
 
 
     private SwipeBackLayout mSwipeBackLayout;
-//    public ZLoadingDialog zLoadingDialog;
+    public ZLoadingDialog zLoadingDialog;
     public MMKV mmkv;
 
     @Override
@@ -51,23 +51,23 @@ public abstract class BaseActivity extends SwipeBackActivity {
     /**
      * dialog相关
      */
-//    public void dialog() {
-//        zLoadingDialog = new ZLoadingDialog(this);
-//        zLoadingDialog.setLoadingBuilder(Z_TYPE.CHART_RECT)
-//                .setLoadingColor(Color.parseColor("#eeeeee"))
-//                .setHintText("加载中...")
-//                .setHintTextSize(14F)
-//                .setHintTextColor(Color.parseColor("#eeeeee"))
-//                .setDialogBackgroundColor(Color.parseColor("#CC111111"))
-//                .setDurationTime(1.3);
-//    }
+    public void dialog() {
+        zLoadingDialog = new ZLoadingDialog(this);
+        zLoadingDialog.setLoadingBuilder(Z_TYPE.CHART_RECT)
+                .setLoadingColor(Color.parseColor("#eeeeee"))
+                .setHintText("加载中...")
+                .setHintTextSize(14F)
+                .setHintTextColor(Color.parseColor("#eeeeee"))
+                .setDialogBackgroundColor(Color.parseColor("#CC111111"))
+                .setDurationTime(1.3);
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        if (zLoadingDialog != null) {
-//            zLoadingDialog.dismiss();
-//        }
+        if (zLoadingDialog != null) {
+            zLoadingDialog.dismiss();
+        }
     }
 
     /**

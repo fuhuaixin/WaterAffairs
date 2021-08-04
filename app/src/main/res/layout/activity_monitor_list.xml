@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_zyl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/image_zyl"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@mipmap/icon_item_right" />
+
+                <TextView
+                    android:id="@+id/tv_zyl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="中原路监控"
+                    android:textColor="@color/tv333"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/all_line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_zyl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingTop="15dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_hhl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/image_hhl"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@mipmap/icon_item_right" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="航海路监控"
+                    android:textColor="@color/tv333"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/all_line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_hhl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingTop="15dp"
+                android:visibility="gone" />
+            <LinearLayout
+                android:id="@+id/ll_yxl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/image_yxl"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@mipmap/icon_item_right" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="英协路监控"
+                    android:textColor="@color/tv333"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/all_line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_yxl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingTop="15dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

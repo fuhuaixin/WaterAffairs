@@ -1,153 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="190dp"
-    android:orientation="vertical"
+    android:layout_margin="15dp"
     android:background="@drawable/shape_home_moudel_bg"
-    android:layout_margin="15dp">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <LinearLayout
             android:id="@+id/ll_patrol_record"
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/icon_home_xcgl"
                 android:layout_width="43dp"
-                android:layout_height="43dp"/>
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_home_xcgl" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:text="巡查管理"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="巡查管理"
+                android:textColor="#666666"
+                android:textSize="13sp" />
         </LinearLayout>
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/all_line"/>
+            android:background="@color/all_line" />
+
         <LinearLayout
             android:id="@+id/ll_monitor"
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/icon_home_jcd"
                 android:layout_width="43dp"
-                android:layout_height="43dp"/>
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_home_jcd" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:text="监测点"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="监测点"
+                android:textColor="#666666"
+                android:textSize="13sp" />
         </LinearLayout>
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/all_line"/>
+            android:background="@color/all_line" />
+
         <LinearLayout
             android:id="@+id/ll_water_collect"
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/icon_home_slcj"
                 android:layout_width="43dp"
-                android:layout_height="43dp"/>
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_home_slcj" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:text="水量采集"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="水量采集"
+                android:textColor="#666666"
+                android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/all_line"/>
+        android:background="@color/all_line" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <LinearLayout
             android:id="@+id/ll_reported"
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/icon_home_xxsb"
                 android:layout_width="43dp"
-                android:layout_height="43dp"/>
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_home_xxsb" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:text="信息上报"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="信息上报"
+                android:textColor="#666666"
+                android:textSize="13sp" />
         </LinearLayout>
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/all_line"/>
+            android:background="@color/all_line" />
+
         <LinearLayout
             android:id="@+id/ll_project"
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/icon_home_gcxx"
                 android:layout_width="43dp"
-                android:layout_height="43dp"/>
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_home_gcxx" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:text="工程信息"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="工程信息"
+                android:textColor="#666666"
+                android:textSize="13sp" />
         </LinearLayout>
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/all_line"/>
+            android:background="@color/all_line" />
+
         <LinearLayout
             android:id="@+id/ll_contact"
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/icon_home_txl"
                 android:layout_width="43dp"
-                android:layout_height="43dp"/>
+                android:layout_height="43dp"
+                android:src="@mipmap/icon_home_video" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:text="通讯录"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="视频监控"
+                android:textColor="#666666"
+                android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

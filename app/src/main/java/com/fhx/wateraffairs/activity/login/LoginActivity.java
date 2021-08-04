@@ -1,17 +1,25 @@
 package com.fhx.wateraffairs.activity.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.alibaba.fastjson.JSON;
 import com.fhx.wateraffairs.MainActivity;
 import com.fhx.wateraffairs.R;
+import com.fhx.wateraffairs.base.AppUrl;
 import com.fhx.wateraffairs.base.BaseActivity;
+import com.fhx.wateraffairs.base.LoginBean;
 import com.fhx.wateraffairs.utils.CutToUtils;
+import com.zhouyou.http.EasyHttp;
+import com.zhouyou.http.callback.SimpleCallBack;
+import com.zhouyou.http.exception.ApiException;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -134,8 +142,10 @@ public class LoginActivity extends BaseActivity {
                     ToastShort("请输入密码");
                     return;
                 }
+//                Login();
                 finish();
                 CutToUtils.getInstance().JumpTo(LoginActivity.this, MainActivity.class);
+                ToastShort("登陆成功");
                 break;
 
             case R.id.image_user_del:
@@ -146,8 +156,39 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.tv_forget:
                ToastShort("忘记密码");
-
                 break;
         }
+    }
+    LoginBean loginBean;
+    private void Login(){
+        EasyHttp.get(AppUrl.Login)
+                .timeStamp(true)
+                .syncRequest(false)
+                .params("username", editUser.getText().toString())
+                .params("password", editPassword.getText().toString())
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        ToastShort("登陆失败");
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        Log.e("fhxx", s);
+                        loginBean = JSON.parseObject(s, LoginBean.class);
+                        if (loginBean.isStatus()){
+                            finish();
+                            CutToUtils.getInstance().JumpTo(LoginActivity.this, MainActivity.class);
+                            ToastShort("登陆成功");
+                            LoginBean.DataBean data = loginBean.getData();
+                            String tokens = data.getUsername() + "-" + data.getTimestamp() + "-" + data.getToken();
+                            mmkv.encode("token",tokens);
+                        }else {
+                            ToastShort("登陆失败");
+
+                        }
+                    }
+                });
+
     }
 }

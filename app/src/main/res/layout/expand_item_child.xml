@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_child_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="工程部位："
+        android:textColor="@color/tv666"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edit_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:background="@null"
+        android:hint="请输入"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/tv666"
+        android:textColorHint="@color/tv999"
+        android:textSize="14sp" />
+
+</LinearLayout>

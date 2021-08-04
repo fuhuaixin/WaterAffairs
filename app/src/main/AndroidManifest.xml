@@ -20,7 +20,19 @@
     <!-- 这个权限用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 拨打电话的权限，这里必须要添加权限，否则当点击电话号码的时候程序会崩溃 -->
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--vitamio权限-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 
     <application
         android:name=".base.BaseApplication"
@@ -52,6 +64,13 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" />
+        <!--vitamio视频播放界面-->
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
             android:name=".MainActivity"
@@ -84,6 +103,32 @@
         <activity
             android:name=".activity.home.NewsNotifyActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--视频监控列表-->
+        <activity
+            android:name=".activity.video.MonitorVideoListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+        <!--视频监控1-->
+        <activity
+            android:name=".activity.video.MonitorVideoActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--回放列表-->
+        <activity
+            android:name=".activity.video.RebackVidioListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--回放列表播放-->
+        <activity
+            android:name=".activity.video.ReBackVidioActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--视频监控2-->
+        <activity
+            android:name=".activity.video.EzOpenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <!--        监测点-->
         <activity
             android:name=".activity.home.MonitoringActivity"
@@ -125,21 +170,26 @@
             android:name=".activity.home.ProjectInformationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--        通讯录-->
-        <activity android:name=".activity.home.ContactsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".activity.home.ContactsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--        通讯录详情-->
-        <activity android:name=".activity.home.ContactsMsgActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".activity.home.ContactsMsgActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <!--        异常记录-->
-        <activity android:name=".activity.patrol.AnomalyRecordActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".activity.patrol.AnomalyRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--        异常记录详情-->
-        <activity android:name=".activity.patrol.AnomalyRecordMsgActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".activity.patrol.AnomalyRecordMsgActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--        异常记录表单提交-->
-        <activity android:name=".activity.patrol.AnomalyCommitActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".activity.patrol.AnomalyCommitActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <!--        投诉反馈-->
         <activity
@@ -167,6 +217,74 @@
         <activity
             android:name=".activity.patrol.PatrolLocationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 填写表格选择       -->
+        <activity
+            android:name=".activity.home.RecordWriteActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--大坝巡视检查记录表-->
+        <activity
+            android:name=".activity.form.BarTourRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--渗透流量观测记录表（容积法）-->
+        <!--渗透流量观测记录表（量水堰法）-->
+        <activity
+            android:name=".activity.form.PermeateVolumeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--水库水位观测记录表-->
+        <activity
+            android:name=".activity.form.ReservoirLevelActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--水库降水量观测记录表-->
+        <activity
+            android:name=".activity.form.ReservoirPrecipitationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--温度计观测记录表（气温）-->
+        <!--温度计观测记录表（库水温）-->
+        <activity
+            android:name=".activity.form.TempObservationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--流量观测记录表-->
+        <activity
+            android:name=".activity.form.FlowObservationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--水闸巡视检查记录表-->
+        <activity
+            android:name=".activity.form.WaterlockTourActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--水闸外观形态检测记录表-->
+        <activity
+            android:name=".activity.form.WaterLockCheckActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--闸门启闭力检测记录表-->
+        <activity
+            android:name=".activity.form.GateHoistingCapacityActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--启闭机考核记录表-->
+        <activity
+            android:name=".activity.form.GateHoistRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--渠道工程检查记录表-->
+        <activity
+            android:name=".activity.form.ChannelRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--水库工程检查记录表-->
+        <activity
+            android:name=".activity.form.ReservoirRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--调度指令纪录表-->
+        <activity
+            android:name=".activity.form.DispatchRecordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!--图片上传公用界面-->
+        <activity
+            android:name=".activity.form.ImageCommitActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>
