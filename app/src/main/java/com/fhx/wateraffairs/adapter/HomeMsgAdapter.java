@@ -9,22 +9,17 @@ import com.fhx.wateraffairs.bean.HomeMessageBean;
 
 import java.util.List;
 
-public class HomeMsgAdapter extends BaseQuickAdapter<HomeMessageBean, BaseViewHolder> {
-    public HomeMsgAdapter(@Nullable List<HomeMessageBean> data) {
+public class HomeMsgAdapter extends BaseQuickAdapter<HomeMessageBean.DataBean.RecordsBean, BaseViewHolder> {
+    public HomeMsgAdapter(@Nullable List<HomeMessageBean.DataBean.RecordsBean> data) {
         super(R.layout.adapter_home_msg, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, HomeMessageBean item) {
-        if (item.isPass()) {
-            helper.setText(R.id.tv_pass, "审核成功通知");
-            helper.setImageResource(R.id.view_pass, R.drawable.shape_green_dot);
-        } else {
-            helper.setText(R.id.tv_pass, "审核失败通知");
-            helper.setImageResource(R.id.view_pass, R.drawable.shape_orgen_dot);
-        }
-        helper.setText(R.id.tv_time, item.getTime())
-                .setText(R.id.tv_msg, item.getTitle());
+    protected void convert(BaseViewHolder helper, HomeMessageBean.DataBean.RecordsBean item) {
+
+        helper.setText(R.id.tv_pass, item.getNewsTitle())
+                .setText(R.id.tv_time, item.getCreateTime())
+                .setText(R.id.tv_msg, item.getNewsContent());
 
     }
 }

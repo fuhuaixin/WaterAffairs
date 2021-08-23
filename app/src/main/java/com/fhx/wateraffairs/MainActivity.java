@@ -21,6 +21,7 @@ import com.fhx.wateraffairs.fragment.HomeFragment;
 import com.fhx.wateraffairs.fragment.InspectionFragment;
 import com.fhx.wateraffairs.fragment.MineFragment;
 import com.fhx.wateraffairs.utils.CutToUtils;
+import com.gyf.immersionbar.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //沉浸式
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.white)
+                .statusBarDarkFont(true)
+                .navigationBarDarkIcon(true)
+                .fitsSystemWindows(true)
+                .init();
         initView();
         initData();
         initListener();
@@ -88,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.ACCESS_FINE_LOCATION};
         if (Build.VERSION.SDK_INT >= 23) {
             for (int i = 0; i < permissions.length; i++) {
-                if (ContextCompat.checkSelfPermission(this, permissions[i]) != PackageManager.PERMISSION_GRANTED){
+                if (ContextCompat.checkSelfPermission(this, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(this, permissions, 1);
                 }
             }

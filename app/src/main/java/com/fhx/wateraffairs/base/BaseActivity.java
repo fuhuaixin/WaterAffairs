@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 
 import com.fhx.wateraffairs.R;
+import com.gyf.immersionbar.ImmersionBar;
 import com.tencent.mmkv.MMKV;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
@@ -32,6 +33,15 @@ public abstract class BaseActivity extends SwipeBackActivity {
         setContentView(initLayout());
         ButterKnife.bind(this);
         mmkv = MMKV.defaultMMKV();
+
+        //沉浸式
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.white)
+                .statusBarDarkFont(true)
+                .navigationBarDarkIcon(true)
+                .fitsSystemWindows(true)
+                .init();
+
         mSwipeBackLayout = getSwipeBackLayout();
         // 可以调用该方法，设置是否允许滑动退出
         setSwipeBackEnable(true);

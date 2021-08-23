@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.fhx.wateraffairs.R;
 import com.fhx.wateraffairs.base.BaseActivity;
 import com.fhx.wateraffairs.utils.CutToUtils;
+import com.gyf.immersionbar.ImmersionBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,13 +30,15 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        ImmersionBar.with(this)
+                .reset()
+                .init();
     }
 
     @Override
     protected void initData() {
         AnimationSet animationSet = new AnimationSet(true);
-        AlphaAnimation alphaAnimation = new AlphaAnimation(0,1);
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
         alphaAnimation.setDuration(2000);
         animationSet.addAnimation(alphaAnimation);
         imageText.setAnimation(animationSet);

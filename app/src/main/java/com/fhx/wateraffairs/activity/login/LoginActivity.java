@@ -130,9 +130,9 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.tv_login,R.id.image_user_del,R.id.image_password_del,R.id.tv_forget})
+    @OnClick({R.id.tv_login, R.id.image_user_del, R.id.image_password_del, R.id.tv_forget})
     public void onViewClicked(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.tv_login:
                 if (editUser.getText().toString().equals("")) {
                     ToastShort("请输入账号");
@@ -142,10 +142,10 @@ public class LoginActivity extends BaseActivity {
                     ToastShort("请输入密码");
                     return;
                 }
-//                Login();
-                finish();
+                Login();
+              /*  finish();
                 CutToUtils.getInstance().JumpTo(LoginActivity.this, MainActivity.class);
-                ToastShort("登陆成功");
+                ToastShort("登陆成功");*/
                 break;
 
             case R.id.image_user_del:
@@ -155,16 +155,16 @@ public class LoginActivity extends BaseActivity {
                 editPassword.setText("");
                 break;
             case R.id.tv_forget:
-               ToastShort("忘记密码");
+                ToastShort("忘记密码");
                 break;
         }
     }
+
     LoginBean loginBean;
-    private void Login(){
-        EasyHttp.get(AppUrl.Login)
-                .timeStamp(true)
-                .syncRequest(false)
-                .params("username", editUser.getText().toString())
+
+    private void Login() {
+        EasyHttp.post(AppUrl.Login)
+                .params("userName", editUser.getText().toString())
                 .params("password", editPassword.getText().toString())
                 .execute(new SimpleCallBack<String>() {
                     @Override
@@ -176,14 +176,14 @@ public class LoginActivity extends BaseActivity {
                     public void onSuccess(String s) {
                         Log.e("fhxx", s);
                         loginBean = JSON.parseObject(s, LoginBean.class);
-                        if (loginBean.isStatus()){
+                        if (loginBean.isSuccess()) {
                             finish();
                             CutToUtils.getInstance().JumpTo(LoginActivity.this, MainActivity.class);
                             ToastShort("登陆成功");
                             LoginBean.DataBean data = loginBean.getData();
-                            String tokens = data.getUsername() + "-" + data.getTimestamp() + "-" + data.getToken();
-                            mmkv.encode("token",tokens);
-                        }else {
+                            String tokens = data.getToken();
+                            mmkv.encode("token", tokens);
+                        } else {
                             ToastShort("登陆失败");
 
                         }

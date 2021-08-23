@@ -1,24 +1,35 @@
 package com.fhx.wateraffairs.bean;
 
+import java.util.List;
+
 public class HomeNewsNotifyBean {
-    private String title;
+
+    /**
+     * total : 5
+     * rows : [{"warnId":"1","equipId":"0000000001","warnData":"小李庄水闸水位过高","createTime":"20210823113030","status":"1"},{"warnId":"2","equipId":"0000000001","warnData":"小李庄水闸水位过高","createTime":"20210823113030","status":"1"},{"warnId":"3","equipId":"0000000001","warnData":"小李庄水闸水位过高","createTime":"20210823113030","status":"1"},{"warnId":"4","equipId":"0000000001","warnData":"小李庄水闸水位过高","createTime":"20210823113030","status":"1"},{"warnId":"5","equipId":"0000000001","warnData":"小李庄水闸水位过高","createTime":"20210823113030","status":"1"}]
+     * code : 200
+     * msg : 查询成功
+     */
+
+    private int total;
+    private int code;
     private String msg;
-    private String time;
-    private int image;
+    private List<RowsBean> rows;
 
-    public HomeNewsNotifyBean(String title, String msg, String time, int image) {
-        this.title = title;
-        this.msg = msg;
-        this.time = time;
-        this.image = image;
+    public int getTotal() {
+        return total;
     }
 
-    public String getTitle() {
-        return title;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getMsg() {
@@ -29,19 +40,67 @@ public class HomeNewsNotifyBean {
         this.msg = msg;
     }
 
-    public String getTime() {
-        return time;
+    public List<RowsBean> getRows() {
+        return rows;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setRows(List<RowsBean> rows) {
+        this.rows = rows;
     }
 
-    public int getImage() {
-        return image;
-    }
+    public static class RowsBean {
+        /**
+         * warnId : 1
+         * equipId : 0000000001
+         * warnData : 小李庄水闸水位过高
+         * createTime : 20210823113030
+         * status : 1
+         */
 
-    public void setImage(int image) {
-        this.image = image;
+        private String warnId;
+        private String equipId;
+        private String warnData;
+        private String createTime;
+        private String status;
+
+        public String getWarnId() {
+            return warnId;
+        }
+
+        public void setWarnId(String warnId) {
+            this.warnId = warnId;
+        }
+
+        public String getEquipId() {
+            return equipId;
+        }
+
+        public void setEquipId(String equipId) {
+            this.equipId = equipId;
+        }
+
+        public String getWarnData() {
+            return warnData;
+        }
+
+        public void setWarnData(String warnData) {
+            this.warnData = warnData;
+        }
+
+        public String getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
     }
 }

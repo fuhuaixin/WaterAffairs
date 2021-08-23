@@ -107,4 +107,12 @@ dependencies {
     //日历
     implementation 'com.haibin:calendarview:3.6.9'
     implementation files('libs/BaiduLBS_Android.jar')
+
+
+    //沉浸式
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // fragment快速实现（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+
 }

@@ -18,6 +18,7 @@ import com.fhx.wateraffairs.adapter.MineListAdapter;
 import com.fhx.wateraffairs.base.BaseFragment;
 import com.fhx.wateraffairs.bean.MineListBean;
 import com.fhx.wateraffairs.utils.CutToUtils;
+import com.gyf.immersionbar.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,9 @@ public class MineFragment extends BaseFragment {
     @Override
     public void setViewData(View view) {
         super.setViewData(view);
+        ImmersionBar.with(this)
+                .reset()
+                .init();
         mineListBeanList.clear();
         mineListBeanList.add(new MineListBean("通讯录", R.mipmap.icon_mine_contacts, false));
         mineListBeanList.add(new MineListBean("修改密码", R.mipmap.icon_mine_chager, false));

@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fhx.wateraffairs.R;
@@ -27,12 +29,18 @@ import com.fhx.wateraffairs.activity.patrol.AnomalyRecordActivity;
 import com.fhx.wateraffairs.activity.patrol.AnomalyRecordMsgActivity;
 import com.fhx.wateraffairs.activity.patrol.PatrolRecordActivity;
 import com.fhx.wateraffairs.adapter.AnomalyRecordAdapter;
+import com.fhx.wateraffairs.base.AppUrl;
 import com.fhx.wateraffairs.base.BaseFragment;
 import com.fhx.wateraffairs.bean.AnomalyRecordBean;
+import com.fhx.wateraffairs.bean.HomeMessageBean;
 import com.fhx.wateraffairs.utils.CutToUtils;
+import com.gyf.immersionbar.ImmersionBar;
 import com.to.aboomy.banner.Banner;
 import com.to.aboomy.banner.HolderCreator;
 import com.to.aboomy.banner.IndicatorView;
+import com.zhouyou.http.EasyHttp;
+import com.zhouyou.http.callback.SimpleCallBack;
+import com.zhouyou.http.exception.ApiException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +54,11 @@ public class HomeFragment extends BaseFragment {
     Banner banner;
     @BindView(R.id.recycle_recode)
     RecyclerView recycleRecode;
+    @BindView(R.id.tv_news_one)
+    TextView tv_news_one;
+    @BindView(R.id.tv_news_two)
+    TextView tv_news_two;
+
 
     private List<String> imageList = new ArrayList<>();
     private AnomalyRecordAdapter anomalyRecordAdapter;
@@ -60,6 +73,12 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void setViewData(View view) {
         super.setViewData(view);
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.white)
+                .statusBarDarkFont(true)
+                .navigationBarDarkIcon(true)
+                .fitsSystemWindows(true)
+                .init();
         cutTo = CutToUtils.getInstance();
         imageList.clear();
         imageList.add("http://pic.netbian.com/uploads/allimg/201229/220230-1609250550f18c.jpg");
@@ -67,7 +86,7 @@ public class HomeFragment extends BaseFragment {
         imageList.add("http://pic.netbian.com/uploads/allimg/201231/180633-160940919351b9.jpg");
         setBanner();
         setAdapter();
-
+        getNoticeList();
     }
 
     private void setAdapter() {
@@ -164,6 +183,32 @@ public class HomeFragment extends BaseFragment {
             });
             return iv;
         }
+    }
+
+    private void getNoticeList() {
+        EasyHttp.get(AppUrl.NoticeList)
+                .params("pageNum", "1")
+                .params("pageSize", "2")
+                .headers("Authorization", mmkv.decodeString("token"))
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        HomeMessageBean bean = JSON.parseObject(s, HomeMessageBean.class);
+                        if (bean.isSuccess()) {
+                            List<HomeMessageBean.DataBean.RecordsBean> records = bean.getData().getRecords();
+                            if (records.size() >= 2) {
+                                tv_news_one.setText(records.get(0).getNewsContent());
+                                tv_news_two.setText(records.get(1).getNewsContent());
+
+                            }
+                        }
+                    }
+                });
     }
 
 }

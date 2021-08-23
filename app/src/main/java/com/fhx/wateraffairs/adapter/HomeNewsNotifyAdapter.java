@@ -6,20 +6,23 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.fhx.wateraffairs.R;
 import com.fhx.wateraffairs.bean.HomeNewsNotifyBean;
+import com.fhx.wateraffairs.utils.DateUtil;
 
 import java.util.List;
 
-public class HomeNewsNotifyAdapter extends BaseQuickAdapter<HomeNewsNotifyBean, BaseViewHolder> {
-    public HomeNewsNotifyAdapter( @Nullable List<HomeNewsNotifyBean> data) {
+public class HomeNewsNotifyAdapter extends BaseQuickAdapter<HomeNewsNotifyBean.RowsBean, BaseViewHolder> {
+    public HomeNewsNotifyAdapter(@Nullable List<HomeNewsNotifyBean.RowsBean> data) {
         super(R.layout.adapter_home_news_notify, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, HomeNewsNotifyBean item) {
-        helper.setImageResource(R.id.image,item.getImage());
-        helper.setText(R.id.tv_title,item.getTitle())
-                .setText(R.id.tv_msg,item.getMsg())
-                .setText(R.id.tv_time,item.getTime());
+    protected void convert(BaseViewHolder helper, HomeNewsNotifyBean.RowsBean item) {
+        String createTime = item.getCreateTime();
+        long yyyyMMddHHmmss = DateUtil.getStringToDate(createTime, "yyyyMMddHHmmss");
+        String dateToString = DateUtil.getDateToString(yyyyMMddHHmmss, "yyyy-MM-dd");
+        helper.setText(R.id.tv_title, item.getEquipId())
+                .setText(R.id.tv_msg, item.getWarnData())
+                .setText(R.id.tv_time, dateToString);
 
     }
 }
